@@ -13,16 +13,18 @@ void Jugador::setNombre(string nuevoNombre) {
     nombre = nuevoNombre;
 }
 
-JugadorConPuntuacion::JugadorConPuntuacion(string nombre) : Jugador(nombre), puntuacion(0) {}
-
-int JugadorConPuntuacion::obtenerPuntuacion() const {
-    return puntuacion;
-}
+JugadorConPuntuacion::JugadorConPuntuacion(const string nombre, int puntuacion) : Jugador(nombre), puntuacionActual(puntuacion) {}
 
 int JugadorConPuntuacion::getPuntuacion() const {
-    return puntuacion;
+    return puntuacionActual;
 }
 
 void JugadorConPuntuacion::setPuntuacion(int nuevaPuntuacion) {
-    puntuacion = nuevaPuntuacion;
+    puntuacionActual = nuevaPuntuacion;
+}
+
+
+void JugadorConPuntuacion::sumarPuntos(int puntos) {
+    this -> puntuacionActual += puntos;
+
 }
