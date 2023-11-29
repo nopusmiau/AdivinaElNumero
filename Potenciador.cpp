@@ -13,3 +13,19 @@ void Potenciador::utilizarPotenciador(JugadorConPuntuacion& jugador, string pote
         jugador.setPuntuacion(puntuacionActual * 2);
     }
 }
+
+void Potenciador::setPotenciadoresDisponibles(const vector<string>& potenciadores) {
+    potenciadoresDisponibles = potenciadores;
+}
+
+vector<string> Potenciador::getPotenciadoresDisponibles() const{
+    return potenciadoresDisponibles;
+}
+
+void Potenciador::setPotenciadoresUtilizados(const vector<string>& potenciadores) {
+    potenciadoresUtilizados = potenciadores;
+}
+
+vector<string> Potenciador::getPotenciadoresUtilizados() const{
+    return potenciadoresUtilizados;
+}
