@@ -11,6 +11,7 @@ class JuegoDeAdivinanza {
     private:
         int numeroSecreto;
         int intentosRestantes;
+        int usosPotenciadores;
         vector<int> historialIntentos;
         JugadorConPuntuacion jugador;
         Potenciador potenciador;
@@ -20,9 +21,22 @@ class JuegoDeAdivinanza {
         JuegoDeAdivinanza(JugadorConPuntuacion jugador);
         void adivinar(int numero);
         bool juegoTerminado();
-        bool ganador();
         void reiniciarJuego();
         int obtenerNumeroSecreto() const;
+        string mensaje = "Ya has alcanzado el limite de uso de potenciadores";
+        bool sePuedenUsarPotenciadores() const {
+            return usosPotenciadores < 3;
+        }
+        void usarPotenciador() {
+            if (sePuedenUsarPotenciadores()) {
+                usosPotenciadores ++;
+            } else {
+                mensaje;
+            }
+        }
+        void guardarNombreJugador();
+        int imprimirPuntuacion() const;
+        
 };
 
 #endif
