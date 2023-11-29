@@ -12,6 +12,9 @@ class ManejoArchivos {
         ManejoArchivos(string nombre);
         void guardarDatos(const JugadorConPuntuacion& jugador);
         void cargarDatos(JugadorConPuntuacion& jugador);
+        void guardarNombre(const string);
+        void setNombreArchivo(const string& nombre);
+        string getNombreArchivo() const;
 };
 
 #endif
